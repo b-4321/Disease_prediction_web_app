@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="medisearch.css">
+</head>
+
+<body id="grad">
+    <h1 class="text-center">Searching Pharmecies.............</h1>
+    <!-- Table Data -->
+    <div class="container">
+        <hr>
+        <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="search here">
+
+        <table class="table" id="myTable" data-filter-control="true" data-show-search-clear-button="true">
+            <tr>
+                <th>Pharmecies</th>
+                
+                <th>address</th>
+                
+            </tr>
+            <tr>
+                <td>Apollo Pharmacy Barasat</td>
+                <td>Lila Manson, 61/H/3 61/H, KNC Rd, Gupta Colony, Barasat, Kolkata, West Bengal</td>
+                
+            </tr>
+            <tr>
+                <td>G C PHARMACY</td>
+                <td>Madhyamgram, 98, Jessore Rd, East Udayrajpur, Madhyamgram, Kolkata, West Bengal</td>
+                
+            </tr>
+            <tr>
+                <td>The Leela Pharmacy</td>
+                <td>33, College St, Bara Bazar, Barabazar Market, Kolkata, West Bengal</td>
+                
+            </tr>
+            <tr>
+                <td>Frank Ross Pharmacy - Wipro Campus</td>
+                <td>Wipro Building, Salt Lake Bypass, DM Block, Sector V, Kolkata, West Bengal</td>
+                
+            </tr>
+            <tr>
+                <td>M.S. Life Drug House Pvt. Ltd./td>
+                <td>93, Calcutta Medical College, College Square, Kolkata, West Bengal</td>
+                
+            </tr>
+            <tr>
+                <td>Calcutta Medical</td>
+                <td>52/1/1a, College St, opposite Medical College Gar, Newland, College Square, Kolkata, West Bengal</td>
+               
+            </tr>
+        </table>
+
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29488.408474182852!2d88.32235257431641!3d22.5022674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0271764317f0e1%3A0x2fd2716902332e0e!2sApollo%20Pharmacy%20Kolkata%20South%20City!5e0!3m2!1sen!2sin!4v1690299309020!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <section>
+       
+        
+    </section>
+
+    <script type="application/javascript">
+        function tableSearch() {
+            let input, filter, table, tr, td, txtValue;
+
+            //Intialising Variables
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+<footer></footer>
+
+</html>

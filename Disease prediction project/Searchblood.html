@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="searchblood.css">
+</head>
+
+<body id="grad">
+    <h1 class="text-center">Searching Blood Bank.............</h1>
+    <!-- Table Data -->
+    <div class="container">
+        <hr>
+        <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="search here">
+
+        <table class="table" id="myTable" data-filter-control="true" data-show-search-clear-button="true">
+            <tr>
+                <th>Blood Bank</th>
+                
+                <th>address</th>
+                
+            </tr>
+            <tr>
+                <td>Blood Centre (Barasat Government Medical College &Hospital)</td>
+                <td>Banamalipur, Kolkata, West Bengal</td>
+                
+            </tr>
+            <tr>
+                <td>College of medicine and sagore Dutta hospital blood bank</td>
+                <td>578,B.T. Road Kamarhati, SH 1, Nehaboot Nagar, Ariadaha, Kolkata, West Bengal</td>
+                
+            </tr>
+            <tr>
+                <td>MRS Blood Bank Mgd by Lions BBD Bag Foundationndel</td>
+                <td>225/227, Rabindra Sarani, Raja Katra, Jorasanko, Kolkata, West Bengal</td>
+                
+            </tr>
+            <tr>
+                <td>LIFE CARE BLOOD BANK, Newtown Centre</td>
+                <td>HCG EKO CANCER CENTRE, Plot No DG-4, Newtown, Kolkata, West Bengal</td>
+                
+            </tr>
+            <tr>
+                <td>Apollo Gleneagles Hospital Limited Blood Bank</td>
+                <td>Kadapara, Phool Bagan, Kankurgachi, Kolkata, West Bengal</td>
+                
+            </tr>
+            <tr>
+                <td>Central blood bank-সেন্ট্রাল ব্লাড ব্যাংক</td>
+                <td>255, Ultadanga Main Rd, near IBTM&IH, Manicktala, Kolkata, West Bengal</td>
+               
+            </tr>
+        </table>
+
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235798.569001497!2d88.07560299798827!3d22.565910501206126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0276e41e9337d1%3A0x442c09925009d3c5!2sBlood%20Banks!5e0!3m2!1sen!2sin!4v1690298145060!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <section>
+       
+        
+    </section>
+
+    <script type="application/javascript">
+        function tableSearch() {
+            let input, filter, table, tr, td, txtValue;
+
+            //Intialising Variables
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+<footer></footer>
+
+</html>

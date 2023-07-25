@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="searchambu.css">
+</head>
+
+<body id="grad">
+    <h1 class="text-center">Searching Ambulance.............</h1>
+    <!-- Table Data -->
+    <div class="container">
+        <hr>
+        <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="search here">
+
+        <table class="table" id="myTable" data-filter-control="true" data-show-search-clear-button="true">
+            <tr>
+                <th>City</th>
+                <th>Contact</th>
+               
+            </tr>
+            <tr>
+                <td>kolkata</td>
+                <td>2084422881</td>
+               
+            </tr>
+            <tr>
+                <td>Dum-Dum</td>
+                <td>2086213307</td>
+                
+            </tr>
+            <tr>
+                <td>Sealdah</td>
+                <td>332626819</td>
+               
+            </tr>
+            <tr>
+                <td>Barrackpur</td>
+                <td>332672839</td>
+                
+            </tr>
+            <tr>
+                <td>Barasat</td>
+                <td>7458196925</td>
+                
+            </tr>
+            <tr>
+                <td>Newbarrackpore</td>
+                <td>445577641</td>
+                
+            </tr>
+        </table>
+
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235794.6756519661!2d88.09976719453121!3d22.568186900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275194da3fa47%3A0xaf7028813ff03ee0!2sAMBULANCE%20SERVICE%20%7C%20ICU%20%26%20CRITICAL%20CARE%20AMBULANCE%20SERVICE!5e0!3m2!1sen!2sin!4v1690293666032!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <section>
+       
+        
+    </section>
+
+    <script type="application/javascript">
+        function tableSearch() {
+            let input, filter, table, tr, td, txtValue;
+
+            //Intialising Variables
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+<footer></footer>
+
+</html>

@@ -1,0 +1,21 @@
+
+
+#myInput{
+    margin-left: 100px;
+    padding-bottom: 20px;
+    padding-right: 500px;
+    padding-left: 100px;
+    border-radius: 20px;
+
+}
+
+iframe{
+    width: 100%;
+}
+
+#grad {
+    background-image: linear-gradient(rgb(58, 58, 225), white, black);
+  }
+
+
+ 
