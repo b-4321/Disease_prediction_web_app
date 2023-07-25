@@ -171,7 +171,7 @@ h1, h2, h3{
 }
 .navbar-brand img{
     width: 70px;
-    
+    border-radius: 20px;
 }
 .navbar-show-btn, .navbar-hide-btn{
     background-color: transparent;
