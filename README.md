@@ -24,3 +24,9 @@ Google collab link Heart prediction  : https://colab.research.google.com/drive/1
 Google collab link Parkinson's prediction : https://colab.research.google.com/drive/1CiCAMU6NXC7m75gAS5SAJjsNhFdFoh8M?usp=sharing
 
 Google collab link Diebetis prediction : https://colab.research.google.com/drive/1CJLqrZ7NH4pUl2cFSlTKsKqqPGa9aPP1?usp=sharing
+
+Heart Disease Dataset : https://www.kaggle.com/datasets/thisishusseinali/uci-heart-disease-data
+
+Diebetes Disease Dataset : https://www.kaggle.com/datasets/nancyalaswad90/review
+
+Parkinson's Disease Dataset : https://www.kaggle.com/datasets/vikasukani/parkinsons-disease-data-set
