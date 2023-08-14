@@ -1,0 +1,105 @@
+
+
+import numpy as np
+import pickle
+
+#loading the asved model
+loaded_model=pickle.load(open('..file location..','rb'))
+
+input = (1,122,90,51,220,49.7,0.325,31)
+#changing the to the numpy array
+numpy_input = np.asarray(input)
+#have to reshape the numpy input because we are predicting for only one entry of the complete dataset
+numpy_reshaped = numpy_input.reshape(1,-1)
+
+prediction = loaded_model.predict(numpy_reshaped)
+print(prediction)
+
+if(prediction[0]==0):
+	print('Patient is non-diabetic')
+else:
+	print('Patient is diabetic')
+
+.......................................................
+
+//united.py///
+
+import numpy as np
+import pickle
+import streamlit as st
+
+#loading the saved model
+loaded_model=pickle.load(open('..file location..','rb'))
+
+#creating a function for prediction
+
+def parkinsons_prediction(input_data):
+
+	#changing the to the numpy array
+	numpy_input = np.asarray(input_data)
+	#have to reshape the numpy input because we are predicting for only one entry of the complete dataset
+	numpy_reshaped = numpy_input.reshape(1,-1)
+
+	prediction = loaded_model.predict(numpy_reshaped)
+	print(prediction)
+
+	if(prediction[0]==0):
+		return'Patient has no Parkinson's Disease'
+	else:
+		return'Patient has Parkinson's Disease'
+
+
+def main():
+	#giving a title
+	st.title('Parkinson's Disease Prediction Web app')
+	
+	#getting the input data from user
+
+	MDVP:Fo(Hz)=st.number_input('MDVP:Fo(Hz) value')
+	MDVP:Fhi(Hz)=st.number_input('MDVP:Fhi(Hz) value')
+	MDVP:Flo(Hz)=st.number_input('MDVP:Flo(Hz) value')
+	MDVP:Jitter(%)=st.number_input('MDVP:Jitter(%) value')
+	MDVP:Jitter(Abs)=st.number_input('MDVP:Jitter(Abs) value')
+	MDVP:RAP=st.number_input('MDVP:RAP value')
+	MDVP:PPQ=st.number_input('MDVP:PPQ value')
+	Jitter:DDP=st.number_input('Jitter:DDP value')
+	MDVP:Shimmer=st.number_input('MDVP:Shimmer value')
+	MDVP:Shimmer(dB)=st.number_input('MDVP:Shimmer(dB) value')
+	Shimmer:APQ3=st.number_input('Shimmer:APQ3 value')
+	Shimmer:APQ5=st.number_input('Shimmer:APQ5 value')
+	MDVP:APQ=st.number_input('MDVP:APQ value')
+	Shimmer:DDA=st.number_input('Shimmer:DDA value')
+	NHR=st.number_input('NHR value')
+	HNR=st.number_input('HNR value')
+	RPDE=st.number_input('RPDE value')
+	DFA=st.number_input('DFA value')
+	spread1=st.number_input('spread1 value')
+	spread2=st.number_input('spread2e value')
+	D2=st.number_input('D2 value')
+	PPE=st.number_input('PPE value')
+
+
+	#code for prediction
+	diagnosis=''
+ 
+	#creating a button for prediction
+	if st.button('Heart Test Result'):
+		diagnosis=parkinsons_prediction([MDVP:Fo(Hz),MDVP:Fhi(Hz),MDVP:Flo(Hz),MDVP:Jitter(%),MDVP:Jitter(Abs),MDVP:RAP,MDVP:PPQ,Jitter:DDP,MDVP:Shimmer,MDVP:Shimmer(dB),Shimmer:APQ3,Shimmer:APQ5,MDVP:APQ,Shimmer:DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE])
+
+
+	st.success(diagnosis)
+
+
+if __name__ == '__main__':
+	main()
+
+
+
+streamlit run "C:\Users\Dell\Desktop\import\perkinsons_prediction_app.py"
+
+122.4	148.65	113.819	0.00968	0.00008	0.00465	0.00696	0.01394	0.06134	0.626	0.03134	0.04518	0.04368	0.09403	0.01929	19.085	1	0.458359	0.819521	-4.075192	0.33559	2.486855	0.368674
+
+240.301 245.135	219.783	0.00517	0.00002	0.00316	0.00283	0.00949	0.02018	0.212	0.01176	0.01191	0.01344	0.03529	0.00965	21.02	0	0.371837	0.646167	-7.169701	0.073298	2.266432	0.100881
+
+201.774	262.707	78.228	0.00694	0.00003	0.00412	0.00396	0.01235	0.02574	0.255	0.01454	0.01582	0.01758	0.04363	0.04441	19.368	0	0.508479	0.683761	-6.934474	0.15989  	2.316346	0.112838
+-
